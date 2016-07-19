@@ -33,7 +33,7 @@
         view = views[i];
         camera = new THREE.PerspectiveCamera( fov, width / height, near, far );// パースがかかったカメラ
         camera.position.set(view.eye[0], view.eye[1], view.eye[2]);// カメラの位置
-        camera.lookAt({x:0, y:0, z:0});// カメラの注視点
+        camera.lookAt({x:30, y:0, z:0});// カメラの注視点
         view.camera = camera;
       }
       
