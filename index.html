@@ -21,7 +21,7 @@
         {
           // 右目用の情報
           left: 0.5,// 表示領域の中央から右に表示する
-          eye:[ +30.0, 3, -5],// 右目用カメラのワールド空間での位置 
+          eye:[ +30.0, 3, 5],// 右目用カメラのワールド空間での位置 
         },
       ];
       
@@ -33,8 +33,18 @@
         view = views[i];
         camera = new THREE.PerspectiveCamera( fov, width / height, near, far );// パースがかかったカメラ
         camera.position.set(view.eye[0], view.eye[1], view.eye[2]);// カメラの位置
-        
-        camera.lookAt({x:0, y:0, z:0});// カメラの注視点
+        if(i==0)
+        {
+            camera.lookAt({x:+15, y:0, z:0});// カメラの注視点
+        }
+        else if(i==1)
+        {
+          camera.lookAt({x:-15, y:0, z:0});// カメラの注視点
+        }
+        else
+        {
+          camera.lookAt({x:0, y:0, z:0});// カメラの注視点
+        }
         view.camera = camera;
       }
       
