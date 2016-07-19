@@ -16,12 +16,12 @@
         {
           // 左目用の情報
           left: 0.0,// 領事領域の左端から右に描画する
-          eye:[ -30, 3, 5],// 左目用カメラのワールド空間での位置
+          eye:[ -0, 3, 5],// 左目用カメラのワールド空間での位置
         },
         {
           // 右目用の情報
           left: 0.5,// 表示領域の中央から右に表示する
-          eye:[ +30, 3, 5],// 右目用カメラのワールド空間での位置 
+          eye:[ +0, 3, 5],// 右目用カメラのワールド空間での位置 
         },
       ];
       
@@ -93,7 +93,7 @@
           var left   = Math.floor( width  * view.left );
           var w  = Math.floor( width >> 1 );
           var h = Math.floor( height );
-          var separation_distance = 1 * width;
+          var separation_distance = 0 * width;
           if(i == 0) separation_distance = -separation_distance;// ０の時は反対方向にずれる
            renderer.setViewport( separation_distance, 0, width, height );// 注視点を各視点の中心に持ってくる
            renderer.setScissor( left, 0, width, height );// 画面の半分だけ更新
