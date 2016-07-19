@@ -33,7 +33,8 @@
         view = views[i];
         camera = new THREE.PerspectiveCamera( fov, width / height, near, far );// パースがかかったカメラ
         camera.position.set(view.eye[0], view.eye[1], view.eye[2]);// カメラの位置
-        camera.lookAt({x:30, y:0, z:0});// カメラの注視点
+        
+        camera.lookAt({x:0, y:0, z:0});// カメラの注視点
         view.camera = camera;
       }
       
@@ -92,7 +93,7 @@
           var left   = Math.floor( width  * view.left );
           var w  = Math.floor( width >> 1 );
           var h = Math.floor( height );
-          var separation_distance = 0 * width;
+          var separation_distance = 10 * width;
           if(i == 0) separation_distance = -separation_distance;// ０の時は反対方向にずれる
            renderer.setViewport( separation_distance, 0, width, height );// 注視点を各視点の中心に持ってくる
            renderer.setScissor( left, 0, width, height );// 画面の半分だけ更新
